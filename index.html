@@ -6,7 +6,8 @@
         
         <title>BeKey Video</title>
         
-        
+        <script src="js/jquery-3.0.0.min.js" defer></script>
+        <script src="js/common.js" defer></script>
         <link rel="stylesheet" href="style.css">
       
 
@@ -17,18 +18,38 @@
 		</header>
 		<div class="container">
 				
-            <video controls width="1280" height="720">
+            <video controls >
               <source src="onion.mp4" type="video/mp4">
-                <track src="button.vtt"  kind="subtitles" srclang="ru" default></track>
+               
               
             </video>
+
+            <button id="playBtn" class="btn hidden"><img src="btn.png" alt="press"/></button>
+
+            <section class="modal hidden" id="modal">
+	         	          
+	          <button class="modal-close" id="close">x</button>
+
+	          <button class="btn"><img src="btn.png" alt="press"/></button>
+
+	          <div class="advert">
+	          	<p>CSS opacity 0.3</p>
+	          </div>
+
+	        </section>
           
 		</div>
+		
+        <div id="controls" class="hidden">
+            
+           
+       
+        </div>
 
    
 
    
-  		<script src="jquery-3.0.0.min.js"></script>
+  		
 
    </body>
 </html>
