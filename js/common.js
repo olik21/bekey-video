@@ -9,13 +9,40 @@ var videoEl = document.getElementsByTagName('video')[0],
             modal = document.getElementById('modal'),
             close = document.getElementById('close');
 
+     /*    
 
-	videoEl.addEventListener("currentTime", function() { playBtn.classList.remove("hidden"); }, true);
-	
-	videoEl.currentTime = 5.0;
-           // if(videoEl.currentTime == 3.0) 
-         
-               
+			videoEl.ontimeupdate = function () {
+
+				if((Math.round(videoEl.currentTime)) >= 24 && (Math.round(videoEl.currentTime) ) <= 27){
+    			
+	    			playBtn.classList.remove('hidden');
+	    			videoEl.controls = false; 
+    			}
+    			else {
+	    		
+	    			playBtn.classList.add('hidden');
+	    			videoEl.controls = true;
+    			}
+
+			};
+
+*/
+        
+		 playBtn.addEventListener('timeupdate', function () {
+
+		 	if((Math.round(videoEl.currentTime)) >= 24 && (Math.round(videoEl.currentTime) ) <= 27){
+    			
+	    			playBtn.classList.remove('hidden');
+	    			videoEl.controls = false; 
+    			}
+    			else {
+	    		
+	    			playBtn.classList.add('hidden');
+	    			videoEl.controls = true;
+    			}
+
+		 }, false);
+
         playBtn.addEventListener('click', function () {
       
             modal.classList.remove("hidden");
@@ -37,10 +64,7 @@ var videoEl = document.getElementsByTagName('video')[0],
 
 
 
-        videoEl.addEventListener('timeupdate', function () {
-         
-         //   playBtn.style.display = 'block'; 
-        }, false);
+       
          
        
        
